@@ -1,0 +1,27 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+
+  <div id="player"></div>
+
+<script>
+	
+var playerElement = document.getElementById("player");
+var player = new Clappr.Player({
+      mediacontrol: {
+      seekbar: "#567",
+      buttons: "#567"
+      },
+ height: "200",
+ width: "100%",
+autoPlay:false,
+  plugins: {
+    'core': [LevelSelector]
+    },
+	xhrSetup: function(xhr, url) {
+		xhr.withCredentials = false;
+	}
+});
+player.attachTo(playerElement);
+player.load({source: 'https://e7384f46cb09.eu-central-1.playback.live-video.net/api/video/v1/eu-central-1.922366157501.channel.GOtmfkLbP0bY.m3u8', mimeType: ''});player.play();
+
+</script>
